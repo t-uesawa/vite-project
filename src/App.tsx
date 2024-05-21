@@ -3,6 +3,8 @@ import { FormDialog } from "./FormDialog";
 import { ActionButton } from "./ActionButton";
 import { SideBar } from "./SideBar";
 import { TodoItem } from "./TodoItem";
+import { ToolBar } from "./ToolBar";
+import { GlobalStyles } from "@mui/material";
 
 // Appコンポーネント(JSX)
 export const App = () => {
@@ -78,6 +80,8 @@ export const App = () => {
 
   return (
     <div>
+      <GlobalStyles styles={{ body: { margin: 0, padding: 0 } }}></GlobalStyles>
+      <ToolBar filter={filter} />
       <SideBar onSort={handleSort}></SideBar>
       <FormDialog text={text} onChange={handleChange} onSubmit={handleSubmit} />
       <ActionButton todos={todos} onEmpty={handleEmpty}></ActionButton>
